@@ -1,0 +1,33 @@
+{
+  "name": "moamalaty-platform",
+  "version": "1.0.0",
+  "description": "منصة إلكترونية متكاملة لإدارة ومتابعة المعاملات الحكومية في العراق",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "start": "cd backend && npm start",
+    "deploy:netlify": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "iraq",
+    "government",
+    "transactions",
+    "moamalaty",
+    "معاملتي"
+  ],
+  "author": "Moamalaty Team",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
